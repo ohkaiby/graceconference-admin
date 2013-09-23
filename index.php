@@ -119,7 +119,9 @@ $adults = array();
 	<script src="jquery.dataTables.min.js"></script>
 	<script>
 	$( document ).ready( function() {
-		$('#grace-table').dataTable();
+		$('#grace-table').dataTable( {
+			iDisplayLength : 50
+		} );
 	} );
 	</script>
 </body>
