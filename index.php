@@ -120,7 +120,7 @@ $adults = array();
 	<script>
 	$( document ).ready( function() {
 		$('#grace-table').dataTable( {
-			iDisplayLength : 50
+			iDisplayLength : 1000
 		} );
 	} );
 	</script>
