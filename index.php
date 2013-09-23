@@ -83,7 +83,7 @@ $adults = array();
 				<td><?php echo $row[ 'phone' ]; ?></td>
 				<td><?php echo ( $row[ 'phone_is_mobile' ] == 1 ) ? 'Yes' : 'No'; ?></td>
 				<td><?php
-					$meals_json = json_decode( $row[ 'meal_plan' ], true );
+					$meals_json = json_decode( stripcslashes( $row[ 'meal_plan' ] ), true );
 					$meals_array = array();
 					foreach( $meals_json as $day_key => $meals_for_day ) {
 						if ( !empty( $meals_for_day[ 'breakfast' ] ) || !empty( $meals_for_day[ 'lunch' ] ) || !empty( $meals_for_day[ 'dinner' ] ) ) {
