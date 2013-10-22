@@ -18,7 +18,7 @@ try {
 	die();
 }
 
-$query = $dbh->query( 'SELECT * FROM attendees;' );
+$query = $dbh->query( 'SELECT * FROM attendees ORDER BY last_name ASC, first_name ASC, email ASC;' );
 $age_map = array(
 	'11' => '≤11',
 	'12_17' => '12–17',
@@ -55,6 +55,7 @@ $adults = array();
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Email</th>
+			<th>Address</th>
 			<th>Gender</th>
 			<th>Age</th>
 			<th>Exact Age</th>
@@ -72,6 +73,9 @@ $adults = array();
 				<td><?php echo $row[ 'first_name' ]; ?></td>
 				<td><?php echo $row[ 'last_name' ]; ?></td>
 				<td><?php echo $row[ 'email' ]; ?></td>
+				<td><?php
+					echo $row[ 'address' ] .', '. $row[ 'city' ] .', '. $row[ 'state' ] .' '. $row[ 'zip' ];
+				?></td>
 				<td><?php echo $row[ 'gender' ]; ?></td>
 				<td><?php
 					echo $age_map[ $row[ 'age' ] ];
