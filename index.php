@@ -111,7 +111,7 @@ $adults = array();
 						}
 					}
 
-					echo implode( '<br>', $meals_array );
+					echo implode( ' ', $meals_array );
 				?></td>
 				<td><?php echo ( $row[ 'paid' ] == 1 ) ? 'Yes' : 'No'; ?></td>
 			</tr>
